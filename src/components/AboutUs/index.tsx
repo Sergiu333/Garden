@@ -24,7 +24,7 @@ const AboutUs = () => {
             <div className="bg-about-rectangle-bottom w-[85vw] h-[200px] absolute bottom-0"/>
             <div className="flex flex-col xl:flex-row justify-between bg-about-us px-10">
                 <div className="flex flex-col gap-[16px] justify-center">
-                    <div className="text-[32px] font-semibold leading-[139%] text-[#FF9505]">About Us</div>
+                    <div className="text-[32px] font-semibold leading-[139%] text-[#FF9505] z-10">About Us</div>
                     <div className="text-[16px] leading-[158%] text-[#FFFBFB] lg:w-[70%]">
                         Dream Home is a gated community with a great location. Located downtown, you’re within
                         walking distance of Parks, and the best shopping, dining and entertainment Getting around is

@@ -17,6 +17,8 @@ body{
 
 .bg-about-us{
     background-image: url('/image-about-us.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .bg-about-rectangle-top{
