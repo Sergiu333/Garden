@@ -3,6 +3,7 @@ import {Header} from "../components";
 import Hero from "@/components/Hero";
 import Filter from "@/components/Filter";
 import Neighborhood from "@/components/Neighborhood";
+import AboutUs from "@/components/AboutUs";
 
 const Home: NextPage = () => {
     return (
@@ -11,6 +12,7 @@ const Home: NextPage = () => {
             <Hero/>
             <Filter/>
             <Neighborhood/>
+            <AboutUs/>
         </div>
     )
 }

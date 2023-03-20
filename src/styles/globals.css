@@ -15,3 +15,16 @@ body{
     transform: rotate(-180deg);
 }
 
+.bg-about-us{
+    background-image: url('/image-about-us.jpg');
+}
+
+.bg-about-rectangle-top{
+    background: linear-gradient(180deg, rgba(27, 27, 27, 0) 0%, #1B1B1B 100%);
+    transform: rotate(-180deg);
+}
+
+.bg-about-rectangle-bottom{
+    background: linear-gradient(180deg, rgba(27, 27, 27, 0) 0%, #1B1B1B 100%);
+}
+

@@ -130,7 +130,7 @@ const Filter = () => {
                 </div>
                 <div className="flex flex-col md:grid  lg:grid-cols-2 2xl:grid-cols-3 gap-10 pt-[32px]">
                     {filteredItems.map(({url, price}, index) => (
-                        <div className="flex flex-row gap-[32px]">
+                        <div className="flex flex-row gap-[32px] justify-center">
                             <div className="flex flex-col bg-[#2C2B2B] w-fit rounded-[8px] overflow-hidden"
                                  key={`${index}`}>
                                 <div className="relative w-[577px] h-[450px]">
@@ -172,7 +172,7 @@ const Filter = () => {
                     ))}
                 </div>
                 <Link href="/">
-                    <div className="flex justify-center items-center flex-col gap-1">
+                    <div className="flex justify-center items-center flex-col gap-1 py-[35px]">
                         <div className="relative w-[48px] h-[48px]">
                             <Image src="/circle.svg" alt="view more" fill objectFit="contain"/>
                         </div>

@@ -37,7 +37,7 @@ const Header = () => {
     return (
         <header className={`fixed top-0 left-0 z-[999] w-full transition-colors delay-100 ${topbarColor}`}>
             <div
-                className="px-[20px] sm:px-[100px] md:px-[150px] bg-transparent h-[70px] lg:px-[135px] py-[16px] lg:py-[30px] 2xl:py-[55px] flex flex-row justify-between items-center">
+                className="px-[20px] sm:px-[100px] md:px-[150px] bg-transparent h-[70px] py-[16px] lg:py-[30px] 2xl:py-[55px] flex flex-row justify-between items-center">
                 <Link href="/" className="relative">
                     <div className="w-[90px] h-[56px] 2xl:w-[100px] 2xl:h-[96px]">
                         <Image src="/logo.svg" alt="image news" layout="fill"  objectFit="contain"/>
