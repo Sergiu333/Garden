@@ -7,7 +7,7 @@ const Neighborhood = () => {
               <div className="text-[32px] font-semibold leading-[139%] text-[#FF9505]">Neighborhood</div>
               <div className="text-[16px] leading-[158%] text-white/[50%]">Deam home villas San Diego, CA, USA</div>
           </div>
-          <div className="relative w-full h-[60vh]">
+          <div className="relative w-full h-[40vh] lg:h-[60vh]">
               <Image src="/map.jpg" alt="map" fill objectFit="cover"/>
           </div>
       </div>

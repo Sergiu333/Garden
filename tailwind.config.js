@@ -51,6 +51,8 @@ module.exports = {
         'secondary-gray': '#8E99AA',
         'background-dark': '#181A1F',
         'primary-dark-blue': '#1480FF',
+        'w': '#FFFBFB',
+        'o': '#FF9505',
       },
       letterSpacing: {
         custom: '0.2em',

@@ -21,6 +21,12 @@ body{
     background-size: cover;
 }
 
+/*.bg-contact{*/
+/*    background-image: url('/bg-contact.png');*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: contain;*/
+/*}*/
+
 .bg-about-rectangle-top{
     background: linear-gradient(180deg, rgba(27, 27, 27, 0) 0%, #1B1B1B 100%);
     transform: rotate(-180deg);
@@ -30,3 +36,7 @@ body{
     background: linear-gradient(180deg, rgba(27, 27, 27, 0) 0%, #1B1B1B 100%);
 }
 
+.rectangle-contact{
+    background: linear-gradient(180deg, rgba(27, 27, 27, 0) 0%, #1B1B1B 100%);
+    transform: rotate(-180deg);
+}

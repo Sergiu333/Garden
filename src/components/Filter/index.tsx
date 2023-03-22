@@ -123,18 +123,18 @@ const Filter = () => {
                                 className="font-semibold text-[14px] 2xl:text-[18px] leading-[139%] text-[#1B1B1B]">Filters
                             </div>
                             <div className="relative w-[24px] h-[24px]">
-                                <Image src="/filter.svg" fill objectFill="contain"/>
+                                <Image src="/filter.svg" fill={true} style={{objectFit: 'contain'}} alt="this image is from filter"/>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="flex flex-col md:grid  lg:grid-cols-2 2xl:grid-cols-3 gap-10 pt-[32px]">
                     {filteredItems.map(({url, price}, index) => (
-                        <div className="flex flex-row gap-[32px] justify-center">
+                        <div className="flex flex-row gap-[32px] justify-center" key={`${index}`}>
                             <div className="flex flex-col bg-[#2C2B2B] w-fit rounded-[8px] overflow-hidden"
                                  key={`${index}`}>
-                                <div className="relative w-[577px] h-[450px]">
-                                    <Image src="/image-card.jpg" fill objectFit="contain"/>
+                                <div className="relative w-[380px] lg:w-[577px] h-[300px] lg:h-[450px]">
+                                    <Image src="/image-card.jpg" fill={true} style={{objectFit: 'contain'}} alt="this image is from filter"/>
                                 </div>
                                 <div className="p-[16px]">
                                     <div className="flex flex-col gap-[16px]">
@@ -155,7 +155,7 @@ const Filter = () => {
                                                     <div className="flex flex-row gap-[5.5px] items-center"
                                                          key={`${index}`}>
                                                         <div className="relative w-[16px] h-[16px]">
-                                                            <Image src={src} fill objectFit="contain"/>
+                                                            <Image src={src} fill={true} style={{objectFit: 'contain'}} alt="this image is from filter"/>
                                                         </div>
                                                         <div
                                                             className="flex items-center justify-center text-[#FFFBFB]/[65%] font-semibold text-[12px] md:text-[14px] leading-[139%]">
