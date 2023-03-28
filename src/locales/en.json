@@ -1,0 +1,61 @@
+{
+  "Welcome to React": "Welcome to React and react-i18next",
+  "footer": [
+    {
+      "subtitleLogo" : "Dream Home is a gated community with a great location. Located downtown, you’re within walking distance of Parks, and the...View More",
+      "contact" : "Contact Us",
+      "follow": "Follow Us",
+      "rights" : "All Rights Reserved"
+    }
+  ],
+  "header": [
+    {
+      "url": "/",
+      "text": "Home"
+    },
+    {
+      "url": "/project",
+      "text": "Project"
+    },{
+      "url": "/project",
+      "text": "Other"
+    }
+  ],
+  "subItemsFilter": [
+    {
+      "title": "1 Bedrooms",
+      "src": "/icon-card.svg"
+    },{
+      "title": "1 Bedrooms",
+      "src": "/icon-card.svg"
+    },{
+      "title": "1 Bedrooms",
+      "src": "/icon-card.svg"
+    }
+  ],
+  "details": "View Details",
+  "more": "View more",
+  "filters": "filters",
+  "hero-title-1": "Find Your",
+  "hero-title-2": "Dream Home",
+  "hero-title-3": "@ San Diego",
+  "filter-category": [
+    {
+      "title": "All",
+      "id": "all"
+    },
+    {
+      "title": "Studio",
+      "id": "Studio"
+    },
+    {
+      "title": "1 Badd Room",
+      "id": "1 Badd Room"
+    },
+    {
+      "title": "2 Bad Room",
+      "id": "2 Bad Room"
+    }
+  ],
+  "neighborhood": "Neighborhood"
+}

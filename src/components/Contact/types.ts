@@ -8,9 +8,9 @@ export interface ContactData {
 }
 
 export interface ContactUsProps {
-  description: string;
-  title: string;
-  thanksText: string;
-  interestsSelectionTitle: string;
-  budgetSelectSubtitle: string;
+  description?: string;
+  title?: string;
+  thanksText?: string;
+  interestsSelectionTitle?: string;
+  budgetSelectSubtitle?: string;
 }

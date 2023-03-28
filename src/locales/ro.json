@@ -1,0 +1,61 @@
+{
+  "Welcome to React": "Salut bine ai venit in react",
+  "footer": [
+    {
+      "subtitleLogo" : "Dream Home este o comunitate închisă cu o locație excelentă. Situat în centrul orașului, vă aflați la câțiva pași de parcuri și de... Vezi mai mult",
+      "contact": "Contacte",
+      "follow": "Urmați-ne",
+      "rights" : "Toate drepturile rezervate"
+    }
+  ],
+  "header": [
+    {
+      "url": "/",
+      "text": "Acasă"
+    },
+    {
+      "url": "/project",
+      "text": "Proiecte"
+    },{
+      "url": "/project",
+      "text": "altele"
+    }
+  ],
+  "subItemsFilter": [
+    {
+      "title": "1 Dormitoare",
+      "src": "/icon-card.svg"
+    },{
+      "title": "1 Dormitoare",
+      "src": "/icon-card.svg"
+    },{
+      "title": "1 Dormitoare",
+      "src": "/icon-card.svg"
+    }
+  ],
+  "details": "Mai Mult",
+  "more": "Vezi mai mult",
+  "filters": "filtre",
+  "hero-title-1": "Găsește-ți casa",
+  "hero-title-2": " de vis",
+  "hero-title-3": "@ San Diego",
+  "filter-category": [
+    {
+      "title": "Toate",
+      "id": "all"
+    },
+    {
+      "title": "Stidiou",
+      "id": "Studio"
+    },
+    {
+      "title": "1 ceva",
+      "id": "1 Badd Room"
+    },
+    {
+      "title": "2 ceva",
+      "id": "2 Bad Room"
+    }
+  ],
+  "neighborhood": "Cartier"
+}

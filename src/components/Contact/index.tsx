@@ -15,18 +15,12 @@ const initialFormData: ContactData = {
 
 
 const Contact: FC<ContactUsProps> = (props) => {
-
-
-
     const validationSchema = Yup.object().shape({
         name: Yup.string().trim().min(2, 'Too short!').required('Name is required'),
         phone: Yup.string().trim().min(2, 'Too short!').required('Phone is required'),
-        message: Yup.string()
-            .trim()
-            .min(2, 'Too short!')
-            .required('Message is required'),
+        message: Yup.string().trim().min(2, 'Too short!').required('Message is required'),
         email: Yup.string().email('Invalid email').required('Email is required'),
-        interes: Yup.string().email('Invalid Interes').required('Interes is required'),
+        interes: Yup.string().trim().min(2, 'Too short!').required('Interes is required'),
         services: Yup.array().min(1, 'At least one service must be selected'),
     });
 
@@ -76,7 +70,7 @@ const Contact: FC<ContactUsProps> = (props) => {
                                         <div>
                                             <Field
                                                 type="text"
-                                                className={`w-full bg-transparent outline-0 border-b focus:border-b-grey-1 ${ errors.name && touched.name ? 'border-b-red-600' : 'border-b-grey-1' } text-[20px] md:text-[25px] leading-6 md:leading-[25px] cursor-scale small py-1.5`}
+                                                className={`w-full bg-transparent outline-0 border-b focus:border-b-grey-1 ${ errors.name && touched.name ? 'border-b-red-600' : 'border-b-grey-1' } text-[20px] md:text-[25px] leading-6 md:leading-[25px] cursor-scale small py-1.5 text-w`}
                                                 placeholder="Your Name"
                                                 name="name"
                                             />
@@ -87,7 +81,7 @@ const Contact: FC<ContactUsProps> = (props) => {
                                         <div>
                                             <Field
                                                 type="email"
-                                                className={`w-full bg-transparent outline-0 border-b focus:border-b-grey-1 ${errors.email && touched.email? 'border-b-red-600': 'border-b-grey-1'} text-[20px] md:text-[25px] leading-6 md:leading-[25px] cursor-scale small py-1.5`}
+                                                className={`w-full bg-transparent outline-0 border-b focus:border-b-grey-1 ${errors.email && touched.email? 'border-b-red-600': 'border-b-grey-1'} text-[20px] md:text-[25px] leading-6 md:leading-[25px] cursor-scale small py-1.5 text-w`}
                                                 placeholder="Your Email"
                                                 name="email"
                                             />
@@ -100,7 +94,7 @@ const Contact: FC<ContactUsProps> = (props) => {
                                         <div>
                                             <Field
                                                 type="text"
-                                                className={`w-full bg-transparent outline-0 border-b focus:border-b-grey-1 ${ errors.phone && touched.phone ? 'border-b-red-600' : 'border-b-grey-1'} text-[20px] md:text-[25px] leading-6 md:leading-[25px] cursor-scale small py-1.5`}
+                                                className={`w-full bg-transparent outline-0 border-b focus:border-b-grey-1 ${ errors.phone && touched.phone ? 'border-b-red-600' : 'border-b-grey-1'} text-[20px] md:text-[25px] leading-6 md:leading-[25px] cursor-scale small py-1.5 text-w`}
                                                 placeholder="Phone Number"
                                                 name="phone"
                                             />
@@ -111,7 +105,7 @@ const Contact: FC<ContactUsProps> = (props) => {
                                         <div>
                                             <Field
                                                 type="text"
-                                                className={`w-full bg-transparent outline-0 border-b focus:border-b-grey-1 ${ errors.interes && touched.interes ? 'border-b-red-600' : 'border-b-grey-1'} text-[20px] md:text-[25px] leading-6 md:leading-[25px] cursor-scale small py-1.5`}
+                                                className={`w-full bg-transparent outline-0 border-b focus:border-b-grey-1 ${ errors.interes && touched.interes ? 'border-b-red-600' : 'border-b-grey-1'} text-[20px] md:text-[25px] leading-6 md:leading-[25px] cursor-scale small py-1.5 text-w`}
                                                 placeholder="Interested in"
                                                 name="interes"
                                             />
@@ -124,7 +118,7 @@ const Contact: FC<ContactUsProps> = (props) => {
                                 <div>
                                     <Field
                                         type="text"
-                                        className={`w-full bg-transparent outline-0 border-b focus:border-b-grey-1 ${ errors.message && touched.message ? 'border-b-red-600' : 'border-b-grey-1'} text-[20px] md:text-[25px] leading-6 md:leading-[25px] cursor-scale small py-1.5`}
+                                        className={`w-full bg-transparent outline-0 border-b focus:border-b-grey-1 ${ errors.message && touched.message ? 'border-b-red-600' : 'border-b-grey-1'} text-[20px] md:text-[25px] leading-6 md:leading-[25px] cursor-scale small py-1.5 text-w`}
                                         placeholder="Message"
                                         name="message"
                                     />

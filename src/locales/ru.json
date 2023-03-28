@@ -1,0 +1,61 @@
+{
+  "Welcome to React": "добро пожаловать в следующий js",
+  "footer": [
+    {
+      "subtitleLogo" : "Dream Home — это закрытый комплекс с прекрасным расположением. Расположенный в центре города, вы находитесь в нескольких минутах ходьбы от парков и...Подробнее",
+      "contact" : "Контакты",
+      "follow" : "Подписывайтесь",
+      "rights" : "Все права защищены"
+    }
+  ],
+  "header": [
+    {
+      "url": "/",
+      "text": "дамой"
+    },
+    {
+      "url": "/project",
+      "text": "проекты"
+    },{
+      "url": "/project",
+      "text": "другие"
+    }
+  ],
+  "subItemsFilter": [
+    {
+      "title": "1 Спальни",
+      "src": "/icon-card.svg"
+    },{
+      "title": "1 Спальни",
+      "src": "/icon-card.svg"
+    },{
+      "title": "1 Спальни",
+      "src": "/icon-card.svg"
+    }
+  ],
+  "details": "Детали",
+  "more": "Посмотреть больше",
+  "filters": "Фильтры",
+  "hero-title-1": "Найдите дом",
+  "hero-title-2": " своей мечты",
+  "hero-title-3": "@ San Diego",
+  "filter-category": [
+    {
+      "title": "все",
+      "id": "all"
+    },
+    {
+      "title": "студия",
+      "id": "Studio"
+    },
+    {
+      "title": "1 Бадд Комната",
+      "id": "1 Badd Room"
+    },
+    {
+      "title": "2 Бадд Комната",
+      "id": "2 Bad Room"
+    }
+  ],
+  "neighborhood": "Район"
+}
