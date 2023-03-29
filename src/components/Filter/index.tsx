@@ -4,40 +4,7 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import i18n from "../../../i18n";
 i18n.t("translation.key")
-
-const items = [
-    {
-        url: "/image-card.jpg",
-        price: "100.000$",
-        category: "all"
-    }, {
-        url: "/image-card.jpg",
-        price: "100.000$",
-        category: "all"
-    },
-    {
-        url: "/image-card.jpg",
-        price: "100.000$",
-        category: "Studio"
-    }, {
-        url: "/image-card.jpg",
-        price: "100.000$",
-        category: "all"
-    }, {
-        url: "/image-card.jpg",
-        price: "100.000$",
-        category: "all"
-    },
-    {
-        url: "/image-card.jpg",
-        price: "100.000$",
-        category: "1 Badd Room"
-    }, {
-        url: "/image-card.jpg",
-        price: "100.000$",
-        category: "2 Bad Room"
-    },
-];
+import items from '../../constants/items'
 
 const Filter = () => {
     const [activeCategory, setActiveCategory] = useState("all");
@@ -120,7 +87,7 @@ const Filter = () => {
                     </div>
                 </div>
                 <div className="flex flex-col md:grid  lg:grid-cols-2 2xl:grid-cols-3 gap-10 pt-[32px]">
-                    {filteredItems.map(({url, price}, index) => (
+                    {filteredItems.map(({url, price, id}, index) => (
                         <div className="flex flex-row gap-[32px] justify-center" key={`${index}`}>
                             <div className="flex flex-col bg-[#2C2B2B] w-fit rounded-[8px] overflow-hidden"
                                  key={`${index}`}>
@@ -132,12 +99,14 @@ const Filter = () => {
                                         <div className="flex flex-row justify-between">
                                             <div
                                                 className="text-[#FFFBFB] font-semibold text-[24px] leading-[139%]">
-                                                100.000 $
+                                                {price}
                                             </div>
-                                            <div
-                                                className="py-[11px] px-[24px] bg-[#FFFBFB] rounded-[8px] text-[#1B1B1B] font-semibold text-[14px] leading-[139%]">
-                                                {t("details")}
-                                            </div>
+                                            <Link href={'/project/'+ id} >
+                                                <button
+                                                    className="py-[11px] px-[24px] bg-[#FFFBFB] rounded-[8px] text-[#1B1B1B] font-semibold text-[14px] leading-[139%]">
+                                                    {t("details")}
+                                                </button>
+                                            </Link>
                                         </div>
                                         <div
                                             className="flex flex-row justify-between border border-[#FFFBFB]/[35%] rounded-l-[8px] rounded-r-[8px] p-[11px] child-card">
@@ -149,7 +118,7 @@ const Filter = () => {
                         </div>
                     ))}
                 </div>
-                <Link href="/">
+                <Link href="/project">
                     <div className="flex justify-center items-center flex-col gap-1 py-[35px]">
                         <div className="relative w-[48px] h-[48px]">
                             <Image src="/circle.svg" alt="view more" fill objectFit="contain"/>

@@ -20,8 +20,8 @@ const items = [
 const AboutUs = () => {
     return (
         <div className="px-[20px] sm:px-[100px] md:px-[150px] relative mb-[50px] lg:mb-[150px] w-full">
-            <div className="bg-about-rectangle-top w-[85vw] h-[200px] absolute top-0"/>
-            <div className="bg-about-rectangle-bottom w-[85vw] h-[200px] absolute bottom-0"/>
+            <div className="bg-about-rectangle-top w-[90vw] xs:w-[93vw] md:w-[85vw] h-[200px] absolute top-0"/>
+            <div className="bg-about-rectangle-bottom w-[90vw] xs:w-[93vw] md:w-[85vw] h-[200px] absolute bottom-0"/>
             <div className="flex flex-col xl:flex-row justify-between bg-about-us px-10">
                 <div className="flex flex-col gap-[16px] justify-center">
                     <div className="text-[32px] font-semibold leading-[139%] text-[#FF9505] z-10">About Us</div>
