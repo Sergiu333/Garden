@@ -87,19 +87,19 @@ const Filter = () => {
                     </div>
                 </div>
                 <div className="flex flex-col md:grid  lg:grid-cols-2 2xl:grid-cols-3 gap-10 pt-[32px]">
-                    {filteredItems.map(({url, price, id}, index) => (
+                    {filteredItems.map(({price, id, images}, index) => (
                         <div className="flex flex-row gap-[32px] justify-center" key={`${index}`}>
                             <div className="flex flex-col bg-[#2C2B2B] w-fit rounded-[8px] overflow-hidden"
                                  key={`${index}`}>
                                 <div className="relative w-[380px] lg:w-[577px] h-[300px] lg:h-[450px]">
-                                    <Image src="/image-card.jpg" fill={true} style={{objectFit: 'contain'}} alt="this image is from filter"/>
+                                    <Image src={images[0].url} fill={true} style={{objectFit: 'contain'}} alt="this image is from filter"/>
                                 </div>
                                 <div className="p-[16px]">
                                     <div className="flex flex-col gap-[16px]">
                                         <div className="flex flex-row justify-between">
                                             <div
                                                 className="text-[#FFFBFB] font-semibold text-[24px] leading-[139%]">
-                                                {price}
+                                                {price}$
                                             </div>
                                             <Link href={'/project/'+ id} >
                                                 <button

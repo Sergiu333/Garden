@@ -2,76 +2,153 @@
 const items = [
     {
         id:"1",
-        url: "/image-card.jpg",
-        price: "100.000$",
+        images:[
+            {url: "/image-card.jpg"},
+            {url: "/image-card-2.jpg"},
+            {url: "/image-card-3.jpg"}
+        ],
+        price: 100000,
         category: "all",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque iste itaque odit, quae sapiente vel! Amet dolores et excepturi illum iste, necessitatibus omnis perspiciatis quae quisquam, sint vero voluptate voluptatem.",
-        lemn: "Stejar",
-        acoperis: "Catapal",
-        dimensiune: "3m x 3m"
+        lemn: [
+            {item: "Stejar"},
+            {item: "Sosna"}
+        ],
+        acoperis: [
+            {item: "Catapal"},
+            {item: "Tigla"}
+        ],
+        latimea: "3",
+        lungimea: "3"
 
     }, {
         id:"2",
-        url: "/image-card.jpg",
-        price: "140.000$",
+        images:[
+            {url: "/image-card-3.jpg"},
+            {url: "/image-card.jpg"},
+            {url: "/image-card-2.jpg"}
+        ],
+        price: 40000,
         category: "all",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque iste itaque odit, quae sapiente vel! Amet dolores et excepturi illum iste, necessitatibus omnis perspiciatis quae quisquam, sint vero voluptate voluptatem.",
-        lemn: "Stejar",
-        acoperis: "Catapal",
-        dimensiune: "3m x 3m"
-
+        lemn: [
+            {item: "Sosna"},
+            {item: "Stejar"}
+        ],
+        acoperis: [
+            {item: "Catapal"},
+            {item: "Tigla"}
+        ],
+        latimea: "3",
+        lungimea: "3"
     },
     {
         id:"3",
-        url: "/image-card.jpg",
-        price: "110.000$",
+        images:[
+            {url: "/image-card-2.jpg"},
+            {url: "/image-card.jpg"},
+            {url: "/image-card-3.jpg"}
+        ],
+        price: 110000,
         category: "Studio",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque iste itaque odit, quae sapiente vel! Amet dolores et excepturi illum iste, necessitatibus omnis perspiciatis quae quisquam, sint vero voluptate voluptatem.",
-        lemn: "Stejar",
-        acoperis: "Catapal",
-        dimensiune: "3m x 3m"
+        lemn: [
+            {item: "Sosna"},
+            {item: "Stejar"}
+        ],
+        acoperis: [
+            {item: "Catapal"},
+            {
+                item: "Tigla"
+            }
+        ],
+        latimea: "3",
+        lungimea: "3"
 
     }, {
         id:"4",
-        url: "/image-card.jpg",
-        price: "140.000$",
+        images:[
+            {url: "/image-card-2.jpg"},
+            {url: "/image-card.jpg"},
+            {url: "/image-card-3.jpg"}
+        ],
+        price: 140000,
         category: "all",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque iste itaque odit, quae sapiente vel! Amet dolores et excepturi illum iste, necessitatibus omnis perspiciatis quae quisquam, sint vero voluptate voluptatem.",
-        lemn: "Stejar",
-        acoperis: "Catapal",
-        dimensiune: "3m x 3m"
+        lemn: [
+            {item: "Sosna"},
+            {item: "Stejar"}
+        ],
+        acoperis: [
+            {item: "Catapal"},
+            {item: "Tigla"}
+        ],
+        latimea: "4",
+        lungimea: "3"
 
     }, {
         id:"5",
-        url: "/image-card.jpg",
-        price: "200.000$",
+        images:[
+            {url: "/image-card-3.jpg"},
+            {url: "/image-card-2.jpg"},
+            {url: "/image-card.jpg"}
+        ],
+        price: 200000,
         category: "all",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque iste itaque odit, quae sapiente vel! Amet dolores et excepturi illum iste, necessitatibus omnis perspiciatis quae quisquam, sint vero voluptate voluptatem.",
-        lemn: "Stejar",
-        acoperis: "Catapal",
-        dimensiune: "3m x 3m"
+        lemn: [
+            {item: "Stejar"},
+            {item: "Sosna"}
+        ],
+        acoperis: [
+            {item: "Catapal"},
+            {item: "Tigla"}
+        ],
+        latimea: "3",
+        lungimea: "3"
 
     },
     {
         id:"6",
-        url: "/image-card.jpg",
-        price: "10.000$",
+        images:[
+            {url: "/image-card.jpg"},
+            {url: "/image-card-2.jpg"},
+            {url: "/image-card-3.jpg"}
+        ],
+        price: 10000,
         category: "1 Badd Room",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque iste itaque odit, quae sapiente vel! Amet dolores et excepturi illum iste, necessitatibus omnis perspiciatis quae quisquam, sint vero voluptate voluptatem.",
-        lemn: "Stejar",
-        acoperis: "Catapal",
-        dimensiune: "3m x 3m"
+        lemn: [
+            {item: "Sosna"},
+            {item: "Stejar"}
+        ],
+        acoperis: [
+            {item: "Tigla"},
+            {item: "Catapal"}
+        ],
+        latimea: "6",
+        lungimea: "4"
 
     }, {
         id:"7",
-        url: "/image-card.jpg",
-        price: "20.000$",
+        images:[
+            {url: "/image-card.jpg"},
+            {url: "/image-card-2.jpg"},
+            {url: "/image-card-3.jpg"}
+        ],
+        price: 20000,
         category: "2 Bad Room",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque iste itaque odit, quae sapiente vel! Amet dolores et excepturi illum iste, necessitatibus omnis perspiciatis quae quisquam, sint vero voluptate voluptatem.",
-        lemn: "Stejar",
-        acoperis: "Catapal",
-        dimensiune: "3m x 3m"
-
+        lemn: [
+            {item: "Stejar"},
+            {item: "Sosna"}
+        ],
+        acoperis: [
+            {item: "Catapal"},
+            {item: "Tigla"}
+        ],
+        latimea: "3",
+        lungimea: "3"
     },
 ];
 

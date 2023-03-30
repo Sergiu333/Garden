@@ -45,3 +45,6 @@ input:-webkit-autofill {
     background: linear-gradient(180deg, rgba(27, 27, 27, 0) 0%, #1B1B1B 100%);
     transform: rotate(-180deg);
 }
+.leaflet-control-attribution, .leaflet-control{
+    display: none;
+}

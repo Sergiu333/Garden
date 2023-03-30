@@ -13,7 +13,7 @@ const Footer = () => {
     };
   return(
       <footer>
-          <div className="px-[20px] sm:px-[100px] md:px-[150px] flex flex-col lg:flex-row justify-between py-[64px] gap-10 lg:gap-0">
+          <div className="px-[20px] xs:px-[50px] md:px-[80px] lg:px-[150px] flex flex-col lg:flex-row justify-between py-[64px] gap-10 lg:gap-0">
               <div className="flex flex-col gap-[18px]">
                   <div className="relative w-[90px] h-[82px]">
                       <Image src="/logo.svg" alt="image news" layout="fill"  objectFit="contain"/>
