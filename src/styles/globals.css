@@ -4,6 +4,7 @@
 
 body{
     background: #1B1B1B;
+    color: #FFFBFB;
 }
 
 .hero-gradient-2{
@@ -21,11 +22,6 @@ body{
     background-size: cover;
 }
 
-/*.bg-contact{*/
-/*    background-image: url('/bg-contact.png');*/
-/*    background-repeat: no-repeat;*/
-/*    background-size: contain;*/
-/*}*/
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px #2C2B2B inset;

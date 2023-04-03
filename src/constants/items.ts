@@ -2,6 +2,7 @@
 const items = [
     {
         id:"1",
+        name:"numele produsului",
         images:[
             {url: "/image-card.jpg"},
             {url: "/image-card-2.jpg"},
@@ -23,6 +24,7 @@ const items = [
 
     }, {
         id:"2",
+        name:"numele produsului",
         images:[
             {url: "/image-card-3.jpg"},
             {url: "/image-card.jpg"},
@@ -44,6 +46,7 @@ const items = [
     },
     {
         id:"3",
+        name:"numele produsului",
         images:[
             {url: "/image-card-2.jpg"},
             {url: "/image-card.jpg"},
@@ -67,6 +70,7 @@ const items = [
 
     }, {
         id:"4",
+        name:"numele produsului",
         images:[
             {url: "/image-card-2.jpg"},
             {url: "/image-card.jpg"},
@@ -88,6 +92,7 @@ const items = [
 
     }, {
         id:"5",
+        name:"numele produsului",
         images:[
             {url: "/image-card-3.jpg"},
             {url: "/image-card-2.jpg"},
@@ -110,6 +115,7 @@ const items = [
     },
     {
         id:"6",
+        name:"numele produsului",
         images:[
             {url: "/image-card.jpg"},
             {url: "/image-card-2.jpg"},
@@ -131,6 +137,7 @@ const items = [
 
     }, {
         id:"7",
+        name:"numele produsului",
         images:[
             {url: "/image-card.jpg"},
             {url: "/image-card-2.jpg"},
