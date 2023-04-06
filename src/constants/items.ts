@@ -1,14 +1,14 @@
 
 const items = [
     {
-        id:"1",
+        id:"62",
         name:"numele produsului",
         images:[
             {url: "/image-card.jpg"},
             {url: "/image-card-2.jpg"},
             {url: "/image-card-3.jpg"}
         ],
-        price: 100000,
+        price: 400000,
         category: "all",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque iste itaque odit, quae sapiente vel! Amet dolores et excepturi illum iste, necessitatibus omnis perspiciatis quae quisquam, sint vero voluptate voluptatem.",
         lemn: [

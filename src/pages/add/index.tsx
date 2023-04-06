@@ -49,7 +49,7 @@ const Add = () => {
             //update collection
 
             // simple create new collection with JSON
-            const createArticle = await fetch("http://localhost:1337/api/produses", {
+            const createArticle = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/produses`, {
                 method: "POST",
                 body: formData,
                 headers: {},
@@ -58,7 +58,7 @@ const Add = () => {
             console.log("createArticleRes", createRes)
 
             //upload file to uploads
-            const uploadFile = await fetch("http://localhost:1337/api/upload", {
+            const uploadFile = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/upload`, {
                 method: "POST",
                 body: uploadData,
                 headers: {},
