@@ -6,6 +6,7 @@ import Image from "next/image";
 import React, {useState} from "react";
 import {BsChevronCompactLeft, BsChevronCompactRight} from "react-icons/bs";
 import {RxDotFilled} from "react-icons/rx";
+import Footer from "@/components/Footer";
 
 
 const Modal = ({ imageUrl, onClose, children, subtitle }) => {
@@ -68,6 +69,15 @@ interface Product {
                 }
             ]
         }
+        poster:{
+            data:[
+                {
+                    attributes:{
+                        url:string;
+                    }
+                }
+            ]
+        }
 
     }
 }
@@ -79,12 +89,11 @@ interface ProductPageProps {
 export default function ProductPage({ product }: ProductPageProps) {
 
     const item = product.attributes;
-
-    const [woodType, setWoodType] = useState(item.lemn[0].lemn);
-    const [roofType, setRoofType] = useState(item.acoperis[0].acoperis);
+    const [woodType, setWoodType] = useState(item.lemn[0]?.lemn);
+    const [roofType, setRoofType] = useState(item.acoperis[0]?.acoperis);
     const [price, setPrice] = useState(item.price);
-    const [defaultWoodType, setDefaultWoodType] = useState(item.lemn[0].lemn);
-    const [defaultRoofType, setDefaultRoofType] = useState(item.acoperis[0].acoperis);
+    const [defaultWoodType, setDefaultWoodType] = useState(item.lemn[0]?.lemn);
+    const [defaultRoofType, setDefaultRoofType] = useState(item.acoperis[0]?.acoperis);
     const [currentIndex, setCurrentIndex] = useState(0);
 
 
@@ -93,14 +102,14 @@ export default function ProductPage({ product }: ProductPageProps) {
         let newPrice = currentPrice;
 
         if (woodType === "Stejar") {
-            newPrice += 1000; // increase price by 20%
+            newPrice += 1000;
         } else if (woodType === "Sosna") {
-            newPrice -= 1000; // decrease price by 20%
+            newPrice -= 1000;
         }
 
         setPrice(newPrice);
         setWoodType(woodType);
-        setDefaultWoodType(woodType); // set default wood type to selected wood type
+        setDefaultWoodType(woodType);
     }
 
     function roofChange(event, currentPrice) {
@@ -108,39 +117,55 @@ export default function ProductPage({ product }: ProductPageProps) {
         let newPrice = currentPrice;
 
         if (roofType === "Tigla") {
-            newPrice += 1000; // increase price by 20%
+            newPrice += 1000;
         } else if (roofType === "Catapal") {
-            newPrice -= 1000; // decrease price by 20%
+            newPrice -= 1000;
         }
 
         setPrice(newPrice);
         setRoofType(roofType);
-        setDefaultRoofType(roofType); // set default roof type to selected roof type
+        setDefaultRoofType(roofType);
     }
 
     function lengthChange(event, currentPrice) {
-        const height = parseFloat(event.target.value);
-        let newPrice = currentPrice;
-        if (height > item.lungimea) {
-            newPrice += 300 * (height - item.lungimea);
-        } else if (height < item.lungimea) {
-            newPrice -= 300 * (item.lungimea - height);
+        const length = parseInt(event.target.value);
+        let newPrice = parseInt(currentPrice);
+
+        const prevLength = parseInt(event.target.defaultValue);
+
+        if (length > prevLength) {
+            newPrice += 300;
+        } else if (length < prevLength) {
+            newPrice -= 300;
         }
+
         setPrice(newPrice);
+        console.log(newPrice);
+
+        event.target.defaultValue = length;
     }
+
 
     function widthChange(event, currentPrice) {
-        const width = parseFloat(event.target.value);
-        let newPrice = currentPrice;
-        if (width > item.latimea) {
-            newPrice += 300 * (width - item.latimea);
-        } else if (width < item.latimea) {
-            newPrice -= 300 * (item.latimea - width);
+        const width = parseInt(event.target.value);
+        let newPrice = parseInt(currentPrice);
+
+        const prevWidth = parseInt(event.target.defaultValue);
+
+        if (width > prevWidth) {
+            newPrice += 300;
+        } else if (width < prevWidth) {
+            newPrice -= 300;
         }
+
         setPrice(newPrice);
+        console.log(newPrice);
+
+        event.target.defaultValue = width;
     }
 
-    const prevSlide = () => {
+
+        const prevSlide = () => {
         const isFirstSlide = currentIndex === 0;
         const newIndex = isFirstSlide ? item.multi.data.length - 1 : currentIndex - 1;
         setCurrentIndex(newIndex);
@@ -162,7 +187,6 @@ export default function ProductPage({ product }: ProductPageProps) {
         setCurrentIndex(index);
         setIsModalOpen(true);
     };
-
 
     const CloseModal = () => {
         setIsModalOpen(false);
@@ -208,34 +232,39 @@ export default function ProductPage({ product }: ProductPageProps) {
                             </div>
                         </div>
                         <div className="flex flex-col gap-6 text-[24px] lg:text-[26px] select-none">
-                            <div><span className="text-[#FF9505] font-bold">Pretul: </span>{price}$</div>
+                            <div className="flex flex-row gap-4">
+                                <span className="text-[#FF9505] font-bold">Pretul: </span>
+                                {item.price ? (
+                                    <div>{price}$</div>
+                                ):(<div className="text-gray-500">Negociabil</div>)}
+                            </div>
                             <div className="flex flex-row gap-4">
                                 <div className="text-[#FF9505] font-bold">Tip lemn:</div>
-                                <select
+                                {item.lemn[0]?(<select
                                     id="lemn"
                                     onChange={(event) => woodChange(event, price)}
                                     className="cursor-pointer w-fit bg-[#1B1B1B] border border-w/[65%] text-w/[65%] text-[20px] rounded-lg focus:ring-w/[65%] focus:border-w/[65%] block border border-w/[65%] rounded-[8px]"
                                     value={`${defaultWoodType}`}
                                 >
-                                    <option value={item.lemn[0].lemn}>{item.lemn[0].lemn}</option>
-                                    <option value={item.lemn[1].lemn}>{item.lemn[1].lemn}</option>
-                                </select>
+                                    <option value={item.lemn[0]?.lemn}>{item.lemn[0]?.lemn}</option>
+                                    <option value={item.lemn[1]?.lemn}>{item.lemn[1]?.lemn}</option>
+                                </select>):(<div className="text-gray-500">Indisponibil</div>)}
                             </div>
                             <div className="flex flex-row gap-4">
                                 <div className="text-[#FF9505] font-bold">Tip acoperis:</div>
-                                <select
+                                {item.acoperis[0] ?(<select
                                     id="acoperis"
                                     onChange={(event) => roofChange(event, price)}
                                     className="cursor-pointer w-fit bg-[#1B1B1B] border border-w/[65%] text-w/[65%] text-[20px] rounded-lg focus:ring-w/[65%] focus:border-w/[65%] block border border-w/[65%] rounded-[8px]"
                                     value={`${defaultRoofType}`}
                                 >
-                                    <option value={item.acoperis[0].acoperis}>{item.acoperis[0].acoperis}</option>
-                                    <option value={item.acoperis[1].acoperis}>{item.acoperis[1].acoperis}</option>
-                                </select>
+                                    <option value={item.acoperis[0]?.acoperis}>{item.acoperis[0]?.acoperis}</option>
+                                    <option value={item.acoperis[1]?.acoperis}>{item.acoperis[1]?.acoperis}</option>
+                                </select>):(<div className="text-gray-500">Indisponibil</div>)}
                             </div>
                             <div className="flex flex-row gap-2.5">
                                 <div className="text-[#FF9505] font-bold">Dimensiunea:</div>
-                                <div className="flex justify-center">
+                                {item.lungimea?(<div className="flex justify-center">
                                     <div className="relative">
                                         <input
                                             id="inaltime"
@@ -247,9 +276,9 @@ export default function ProductPage({ product }: ProductPageProps) {
                                             placeholder={item.lungimea + 'm'} // set default value as item's height
                                         />
                                     </div>
-                                </div>
-                                <div> X</div>
-                                <div className="relative">
+                                </div>):(<div className="text-gray-500">Indisponibil</div>)}
+                                {item.lungimea?(<div> X</div>):''}
+                                {item.latimea ? (<div className="relative">
                                     <input
                                         id="latime"
                                         type="number"
@@ -259,7 +288,7 @@ export default function ProductPage({ product }: ProductPageProps) {
                                         className="cursor-pointer px-2 py-1 w-[75px] bg-[#1B1B1B] border border-w/[65%] text-w/[65%] text-[20px] rounded-lg focus:ring-w/[65%] focus:border-w/[65%] block border border-w/[65%] rounded-[8px]"
                                         placeholder={item.latimea + 'm'} // set default value as item's width
                                     />
-                                </div>
+                                </div>):''}
                             </div>
                             <Link href="tel://+37368069937">
                                 <div className="text-center font-bold text-[24px] text-[#1B1B1B] bg-[#FFFBFB] rounded-[8px] px-[24px] py-[12px] border">
@@ -302,22 +331,19 @@ export default function ProductPage({ product }: ProductPageProps) {
                     </Modal>
                 )}
             </div>
+            <Footer/>
         </div>
     )
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const productResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/produses?populate=*`);
-
-    // generează un array cu toate ID-urile produselor
     const productIds = productResponse.data.map((produs) => produs.id);
-
-    // generează un array cu toate obiectele `params` pentru fiecare ID de produs
     const paths = productIds.map((id) => ({ params: { id: id.toString() } }));
 
     return {
         paths,
-        fallback: false, // schimbă la `true` dacă există și produse care nu au pagină asociată
+        fallback: false,
     };
 };
 
