@@ -1,4 +1,4 @@
-export async function fetcher(url, option = {}){
+export async function fetcher(url:any, option = {}){
     let response;
     if(!option) {
         response = await fetch(url);

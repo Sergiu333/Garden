@@ -8,7 +8,7 @@ import {BsChevronCompactLeft, BsChevronCompactRight} from "react-icons/bs";
 import {RxDotFilled} from "react-icons/rx";
 import Footer from "@/components/Footer";
 
-
+// @ts-ignore
 const Modal = ({ imageUrl, onClose, children, subtitle }) => {
     return (
         <div
@@ -29,10 +29,10 @@ const Modal = ({ imageUrl, onClose, children, subtitle }) => {
                 onClick={(event) => event.stopPropagation()}
             >
                 <div className="hidden lg:block">
-                    <Image src={imageUrl} alt="image url" layout="fill" objectFit="cover" />
+                    <Image src={imageUrl} alt="image url" layout="fill" objectFit="cover" priority={true} quality={100} />
                 </div>
                 <div className="block lg:hidden">
-                    <Image src={imageUrl} alt="image url" layout="fill" objectFit="contain" />
+                    <Image src={imageUrl} alt="image url" layout="fill" objectFit="contain" priority={true} quality={100} />
                 </div>
                 {children}
             </div>
@@ -97,7 +97,7 @@ export default function ProductPage({ product }: ProductPageProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
 
-    function woodChange(event, currentPrice) {
+    function woodChange(event:any, currentPrice:any) {
         const woodType = event.target.value;
         let newPrice = currentPrice;
 
@@ -112,7 +112,7 @@ export default function ProductPage({ product }: ProductPageProps) {
         setDefaultWoodType(woodType);
     }
 
-    function roofChange(event, currentPrice) {
+    function roofChange(event:any, currentPrice:any) {
         const roofType = event.target.value;
         let newPrice = currentPrice;
 
@@ -127,7 +127,7 @@ export default function ProductPage({ product }: ProductPageProps) {
         setDefaultRoofType(roofType);
     }
 
-    function lengthChange(event, currentPrice) {
+    function lengthChange(event:any, currentPrice:any) {
         const length = parseInt(event.target.value);
         let newPrice = parseInt(currentPrice);
 
@@ -146,7 +146,7 @@ export default function ProductPage({ product }: ProductPageProps) {
     }
 
 
-    function widthChange(event, currentPrice) {
+    function widthChange(event:any, currentPrice:any) {
         const width = parseInt(event.target.value);
         let newPrice = parseInt(currentPrice);
 
@@ -163,8 +163,6 @@ export default function ProductPage({ product }: ProductPageProps) {
 
         event.target.defaultValue = width;
     }
-
-
         const prevSlide = () => {
         const isFirstSlide = currentIndex === 0;
         const newIndex = isFirstSlide ? item.multi.data.length - 1 : currentIndex - 1;
@@ -178,7 +176,7 @@ export default function ProductPage({ product }: ProductPageProps) {
     };
 
 
-    const goToSlide = (slideIndex) => {
+    const goToSlide = (slideIndex:any) => {
         setCurrentIndex(slideIndex);
     };
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -191,21 +189,19 @@ export default function ProductPage({ product }: ProductPageProps) {
     const CloseModal = () => {
         setIsModalOpen(false);
     };
-    console.log(product.attributes)
     return(
         <div>
             <Header/>
 
             <div className="pt-[100px] text-w px-[20px] xs:px-[50px] md:px-[80px] lg:px-[150px]">
                 <div className="flex flex-col gap-6 lg:gap-4">
-                    <div className="text-[38px] lg:text-[48px] font-bold">Numele Produsului: <span
-                        className="text-[#FF9505] font-semibold">{item.name}</span></div>
+                    <div className="text-[48px] text-[#FF9505] font-semibold whitespace-nowrap">{item.name}</div>
                     <div className="flex flex-col xl:flex-row gap-6 md:10 2xl:gap-24">
                         <div className='max-w-[1400px] h-[300px] lg:h-[680px] xl:h-[720px] w-full relative group pb-10 md:pb-0'>
                             <div
                                 className="relative w-[99%] md:h-[99%] w-full h-full rounded-2xl bg-center bg-cover duration-500 overflow-hidden" onClick={() => handleCardClick(currentIndex)}>
-                                <Image src={`http://localhost:1337${product.attributes.multi.data[currentIndex].attributes.url}`} alt="images" fill={true}
-                                       style={{objectFit: 'cover'}}/>
+                                <Image src={`${product.attributes.multi.data[currentIndex].attributes.url}`} alt="images" fill={true}
+                                       style={{objectFit: 'cover'}} priority={true} quality={100}/>
                             </div>
                             <div
                                 className='block lg:hidden lg:group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
@@ -247,7 +243,9 @@ export default function ProductPage({ product }: ProductPageProps) {
                                     value={`${defaultWoodType}`}
                                 >
                                     <option value={item.lemn[0]?.lemn}>{item.lemn[0]?.lemn}</option>
-                                    <option value={item.lemn[1]?.lemn}>{item.lemn[1]?.lemn}</option>
+                                    <option value={
+                                        // @ts-ignore
+                                        item.lemn[1]?.lemn}>{item.lemn[1]?.lemn}</option>
                                 </select>):(<div className="text-gray-500">Indisponibil</div>)}
                             </div>
                             <div className="flex flex-row gap-4">
@@ -259,7 +257,9 @@ export default function ProductPage({ product }: ProductPageProps) {
                                     value={`${defaultRoofType}`}
                                 >
                                     <option value={item.acoperis[0]?.acoperis}>{item.acoperis[0]?.acoperis}</option>
-                                    <option value={item.acoperis[1]?.acoperis}>{item.acoperis[1]?.acoperis}</option>
+                                    <option value={
+                                        // @ts-ignore
+                                        item.acoperis[1]?.acoperis}>{item.acoperis[1]?.acoperis}</option>
                                 </select>):(<div className="text-gray-500">Indisponibil</div>)}
                             </div>
                             <div className="flex flex-row gap-2.5">
@@ -300,15 +300,17 @@ export default function ProductPage({ product }: ProductPageProps) {
                     <div className="flex flex-col">
                         <div
                             className="select-none text-[20px] leading-[158%] pt-12">
-                            <div>description- {product.attributes.description}</div>
+                            <div>{product.attributes.description}</div>
                         </div>
                         <div className="text-transparent">.</div>
                     </div>
                 </div>
             </div>
             <div className="absolute z-[999] w-fit">
-                {isModalOpen && (
-                    <Modal imageUrl={`http://localhost:1337${product.attributes.multi.data[currentIndex].attributes.url}`} subtitle={item.category} onClose={CloseModal} currentIndex={currentIndex} >
+                {// @ts-ignore
+                    isModalOpen && (
+                        // @ts-ignore
+                    <Modal imageUrl={`${product.attributes.multi.data[currentIndex].attributes.url}`} subtitle={item.category} onClose={CloseModal} currentIndex={currentIndex} >
                         <button className="bg-[#181A1F] p-1 lg:p-4 hover:bg-[#35363A] active:bg-black h-[10%] opacity-50 absolute top-[50%] left-0 -translate-y-[50%]"
                                 onClick={prevSlide}
                         >
@@ -338,7 +340,9 @@ export default function ProductPage({ product }: ProductPageProps) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const productResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/produses?populate=*`);
+    // @ts-ignore
     const productIds = productResponse.data.map((produs) => produs.id);
+    // @ts-ignore
     const paths = productIds.map((id) => ({ params: { id: id.toString() } }));
 
     return {

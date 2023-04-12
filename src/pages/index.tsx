@@ -8,7 +8,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import dynamic from "next/dynamic";
 import {fetcher} from "@/pages/api/api";
-
+// @ts-ignore
 const Home: NextPage = ({produses}) => {
     const Neighborhood = dynamic(() => import('../components/Neighborhood'), {
         ssr: false,
@@ -30,7 +30,6 @@ export default Home
 
 export async function getStaticProps(){
     const productResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/produses?populate=*`);
-    console.log(productResponse, 'test')
 
     return{
         props:{
