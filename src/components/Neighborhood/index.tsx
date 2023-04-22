@@ -20,10 +20,7 @@ const Neighborhood = () => {
               <div className="text-[32px] font-semibold leading-[139%] text-[#FF9505]">{t("neighborhood")}</div>
               <div className="text-[16px] leading-[158%] text-white/[50%]">Deam home villas San Diego, CA, USA</div>
           </div>
-          {/*<div className="relative w-full h-[40vh] lg:h-[60vh]">*/}
-          {/*    <Image src="/map.jpg" alt="map" fill objectFit="cover"/>*/}
-          {/*</div>*/}
-          <MapContainer center={center} zoom={14} className="h-full">
+          <MapContainer center={[geoData.lat, geoData.lng]} zoom={14} className="h-full">
               <TileLayer
                   attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                   // url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"

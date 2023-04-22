@@ -67,7 +67,7 @@ const Add = () => {
             console.log("uploadRes", uploadRes)
         },
     })
-
+// @ts-ignore
     const onMultiFileChange = (e) => {
         const files = e.target.files
         console.log("onMultiFileChange", files)
@@ -79,16 +79,16 @@ const Add = () => {
             <Header/>
             <div className="pt-[150px] px-[20px] xs:px-[50px] md:px-[80px] lg:px-[150px]">
                 <form onSubmit={formik.handleSubmit} className="text-red-800 flex flex-col gap-2">
-                    <div className="flex flex-row gap-2"  className="flex flex-row gap-2">
-                        <label htmlFor="name">name</label>
-                        <input
-                            id="name"
-                            name="name"
-                            type="text"
-                            onChange={formik.handleChange}
-                            value={formik.values.name}
-                        />
-                    </div>
+                    {/*<div className="flex flex-row gap-2"  className="flex flex-row gap-2">*/}
+                    {/*    <label htmlFor="name">name</label>*/}
+                    {/*    <input*/}
+                    {/*        id="name"*/}
+                    {/*        name="name"*/}
+                    {/*        type="text"*/}
+                    {/*        onChange={formik.handleChange}*/}
+                    {/*        value={formik.values.name}*/}
+                    {/*    />*/}
+                    {/*</div>*/}
                     <div className="flex flex-row gap-2">
                         <label htmlFor="price">price</label>
                         <input

@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import useWindowWidth from "../../../utils/hooks/use-window-width";
 import Hamburger from '../../../public/Hamburger';
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import useScrollY from "../../../utils/hooks/use-scroll-y";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../../../i18n";
+import convertImageToBase64 from "../../../utils/hooks/convertImageToBase64";
 i18n.t("translation.key")
-
 
 const Header = () => {
     const toggleHamburger = () => {
@@ -33,6 +33,29 @@ const Header = () => {
         });
     };
 
+    const [imageBase64, setImageBase64] = useState<string | null>(null);
+    const [foisoare, setFoisoare] = useState<string | null>(null);
+    const [font, setFont] = useState<string | null>(null);
+
+    useEffect(() => {
+        const imageUrl = '/hero-image.jpg'; // URL-ul imaginii
+        const foisoare = '/foisoare.svg'; // URL-ul imaginii
+        const font = '/font.svg'; // URL-ul imaginii
+
+        convertImageToBase64(imageUrl)
+            .then((base64) => setImageBase64(base64))
+            .catch((error) => console.error('Error converting image to base64:', error));
+
+        convertImageToBase64(foisoare)
+            .then((base64) => setFoisoare(base64))
+            .catch((error) => console.error('Error converting image to base64:', error));
+
+        convertImageToBase64(font)
+            .then((base64) => setFont(base64))
+            .catch((error) => console.error('Error converting image to base64:', error));
+    }, []);
+
+console.log(imageBase64, '00000000000000000000')
     return (
         <header
             className={`fixed top-0 left-0 z-[999] w-full transition-colors delay-100 ${
@@ -40,9 +63,16 @@ const Header = () => {
             }`}
         >
             <div className="px-[20px] xs:px-[50px] md:px-[80px] lg:px-[150px] bg-transparent h-[70px] py-[16px] lg:py-[30px] 2xl:py-[55px] flex flex-row justify-between items-center">
-                <Link href="/" className="relative">
-                    <div className="w-[90px] h-[56px] 2xl:w-[100px] 2xl:h-[96px]">
-                        <Image src="/logo.svg" alt="image news" layout="fill" objectFit="contain" />
+                <Link href="/" className="flex flex-row">
+                    <div className="relative">
+                        <div className="w-[90px] h-[56px] 2xl:w-[70px] 2xl:h-[56px]">
+                            <Image src="/foisoare.svg" alt="image news" layout="fill" objectFit="contain" quality={100} priority={true} />
+                        </div>
+                    </div>
+                    <div className="relative mt-2.5 overflow-hidden">
+                        <div className="w-[190px] h-[156px] 2xl:w-[200px] 2xl:h-[196px]">
+                            <Image src="/font.svg" alt="image news" layout="fill" objectFit="contain" quality={100} priority={true}/>
+                        </div>
                     </div>
                 </Link>
                 <div className="flex flex-row gap-[40px]">
