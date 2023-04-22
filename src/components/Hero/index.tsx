@@ -28,7 +28,7 @@ const Hero = () => {
             <div className="z-40 w-full h-[80px] lg:h-[153px] hero-gradient-1 absolute top-0"/>
             <div className="absolute top-[50%] z-10 left-[20px] mg:left-auto sm:px-[100px] md:px-[150px]">
                 <div className="flex flex-col font-bold text-[20px] md:text-[50px] lg:text-[64px] leading-[139%] tracking-[0.03em] whitespace-nowrap">
-                    <div className="text-[#FFFBFB]">{t("hero-title-1")} <span className="text-[#FF9505]">tttttttttt</span></div>
+                    <div className="text-[#FFFBFB]">{t("hero-title-1")} <span className="text-[#FF9505]">ttrtttttttt</span></div>
                     <div className="text-[#FFFBFB]">{t("hero-title-3")}</div>
                 </div>
             </div>
