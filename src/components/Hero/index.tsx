@@ -41,6 +41,8 @@ const Hero = () => {
                         objectFit="cover"
                         placeholder="blur"
                         blurDataURL={`data:image/jpeg;base64,${imageBase64}`}
+                        quality={100}
+                        priority={true}
                     />
                 )}
             </div>

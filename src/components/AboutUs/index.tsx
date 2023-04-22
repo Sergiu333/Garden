@@ -1,25 +1,72 @@
-import Image from "next/image";
+import React, {useState, useEffect, useRef} from "react";
 import Link from "next/link";
 
 const items = [
     {
-        number: "500+",
+        number: 500,
         type: "Projects",
         description: "Over 500 lexury villas for“Home Away From Home” experience"
     }, {
-        number: "40+",
+        number: 40,
         type: "Locations",
         description: "Over 500 lexury villas for“Home Away From Home” experience"
     }, {
-        number: "24/7",
+        number: 24,
         type: "Help",
         description: "Over 500 lexury villas for“Home Away From Home” experience"
     },
 ]
 
+
 const AboutUs = () => {
+
+    const elementRef = useRef(null);
+    const [shouldStartCount, setShouldStartCount] = useState(false);
+    const [counts, setCounts] = useState(Array(items.length).fill(0));
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                setShouldStartCount(true);
+            }
+        });
+
+        if (elementRef.current) {
+            observer.observe(elementRef.current);
+        }
+
+        return () => {
+            observer.disconnect();
+        };
+    }, [elementRef]);
+
+
+    useEffect(() => {
+        if (!shouldStartCount) {
+            return;
+        }
+
+        const steps = 50;
+        const durations = 3000;
+        const diffs = items.map(({number}, index) => number / steps);
+
+        const interval = setInterval(() => {
+            setCounts((counts) =>
+                counts.map((count, index) => {
+                    const {number} = items[index];
+                    const diff = diffs[index];
+                    const newCount = count + diff;
+                    return newCount >= number ? number : newCount;
+                })
+            );
+        }, durations / steps);
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, [shouldStartCount, items]);
     return (
-        <div className="px-[20px] xs:px-[50px] md:px-[80px] lg:px-[150px] relative mb-[50px] lg:mb-[150px] w-full">
+        <div className="px-[20px] xs:px-[50px] md:px-[80px] lg:px-[150px] relative mb-[50px] lg:mb-[150px] w-full" ref={elementRef}>
             <div className="bg-about-rectangle-top w-[90vw] xs:w-[93vw] md:w-[85vw] h-[200px] absolute top-0"/>
             <div className="bg-about-rectangle-bottom w-[90vw] xs:w-[93vw] md:w-[85vw] h-[200px] absolute bottom-0"/>
             <div className="flex flex-col xl:flex-row justify-between bg-about-us px-10">
@@ -43,7 +90,7 @@ const AboutUs = () => {
                         return (
                             <div className="flex flex-col gap-[8px] text-center items-center justify-center" key={`${index}`}>
                                 <div
-                                    className="text-[#FF9505]/[80%] font-semibold text-[32px] leading-[39px]">{number}</div>
+                                    className="text-[#FF9505]/[80%] font-semibold text-[32px] leading-[39px]">{Math.round(counts[index])}</div>
                                 <div
                                     className="text-[#FFFBFB]/[65%] font-semibold text-[16px] leading-[20px]">{type}</div>
                                 <div

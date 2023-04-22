@@ -16,9 +16,6 @@
     {
       "url": "/project",
       "text": "Project"
-    },{
-      "url": "/add",
-      "text": "Other"
     }
   ],
   "subItemsFilter": [

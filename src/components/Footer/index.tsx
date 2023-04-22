@@ -11,8 +11,12 @@ const Footer = () => {
         const lang = event.target.value;
         i18n.changeLanguage(lang);
     };
+
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+
   return(
-      <footer>
+      <footer id="contact">
           <div className="px-[20px] xs:px-[50px] md:px-[80px] lg:px-[150px] flex flex-col lg:flex-row justify-between py-[64px] gap-10 lg:gap-0">
               <div className="flex flex-col gap-[18px]">
                   <div className="relative w-[90px] h-[82px]">
@@ -79,7 +83,7 @@ const Footer = () => {
           </div>
           <div className="h-[1px] w-full bg-w/[35%]"/>
           <div className="flex justify-center items-center text-w/[35%] py-[32px]">
-              © 2022 Dandelion | {t('footer.0.rights')}
+              © {currentYear} Foisoare.md | {t('footer.0.rights')}
           </div>
       </footer>
   )

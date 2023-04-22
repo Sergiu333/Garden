@@ -5,7 +5,7 @@ const { SG_API_KEY, FROM_EMAIL, TO_EMAIL_1, TO_EMAIL_2  } = process.env;
 sgMail.setApiKey(SG_API_KEY);
 
 export default async function handler(req, res) {
-  const { name, email, message, from_price, to_price } = req.body;
+  const { name, email, message } = req.body;
   const msg = {
     to: [TO_EMAIL_1, TO_EMAIL_2],
     from: FROM_EMAIL,
