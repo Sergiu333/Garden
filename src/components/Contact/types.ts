@@ -1,4 +1,3 @@
-
 export interface ContactData {
   name: string;
   phone: string;

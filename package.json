@@ -7,6 +7,7 @@
     "export": "next build && next export",
     "build": "next build",
     "start": "next start",
+    "format": "prettier --write \"./**/*.{ts,tsx,scss,css}\" --config ./.prettierrc.js",
     "lint": "next lint"
   },
   "dependencies": {

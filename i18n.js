@@ -18,8 +18,8 @@ i18n
                 translation: ruTranslations,
             },
         },
-        lng: "en",
-        fallbackLng: "en",
+        lng: "ro",
+        fallbackLng: "ro",
         interpolation: {
             escapeValue: false,
         },

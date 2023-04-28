@@ -2,45 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background: #1B1B1B;
-    color: #FFFBFB;
+body {
+  background: #1b1b1b;
+  color: #fffbfb;
 }
 
-.hero-gradient-2{
-    background: linear-gradient(357.33deg, #1B1B1B 22.15%, rgba(27, 27, 27, 0.535551) 56.13%, rgba(27, 27, 27, 0.18) 81.14%, rgba(27, 27, 27, 0) 106.02%);
+.hero-gradient-2 {
+  background: linear-gradient(
+    357.33deg,
+    #1b1b1b 22.15%,
+    rgba(27, 27, 27, 0.535551) 56.13%,
+    rgba(27, 27, 27, 0.18) 81.14%,
+    rgba(27, 27, 27, 0) 106.02%
+  );
 }
 
-.hero-gradient-1{
-    background: linear-gradient(359.56deg, #1B1B1B 20.85%, rgba(27, 27, 27, 0.535551) 52.78%, rgba(27, 27, 27, 0.18) 76.28%, rgba(27, 27, 27, 0) 99.66%);
-    transform: rotate(-180deg);
+.hero-gradient-1 {
+  background: linear-gradient(
+    359.56deg,
+    #1b1b1b 20.85%,
+    rgba(27, 27, 27, 0.535551) 52.78%,
+    rgba(27, 27, 27, 0.18) 76.28%,
+    rgba(27, 27, 27, 0) 99.66%
+  );
+  transform: rotate(-180deg);
 }
 
-.bg-about-us{
-    background-image: url('/image-about-us.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+.bg-about-us {
+  background-image: url('/image-about-us.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
 
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px #2C2B2B inset;
-    -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0 30px #2c2b2b inset;
+  -webkit-text-fill-color: white;
 }
 
-.bg-about-rectangle-top{
-    background: linear-gradient(180deg, rgba(27, 27, 27, 0) 0%, #1B1B1B 100%);
-    transform: rotate(-180deg);
+.bg-about-rectangle-top {
+  background: linear-gradient(180deg, rgba(27, 27, 27, 0) 0%, #1b1b1b 100%);
+  transform: rotate(-180deg);
 }
 
-.bg-about-rectangle-bottom{
-    background: linear-gradient(180deg, rgba(27, 27, 27, 0) 0%, #1B1B1B 100%);
+.bg-about-rectangle-bottom {
+  background: linear-gradient(180deg, rgba(27, 27, 27, 0) 0%, #1b1b1b 100%);
 }
 
-.rectangle-contact{
-    background: linear-gradient(180deg, rgba(27, 27, 27, 0) 0%, #1B1B1B 100%);
-    transform: rotate(-180deg);
+.rectangle-contact {
+  background: linear-gradient(180deg, rgba(27, 27, 27, 0) 0%, #1b1b1b 100%);
+  transform: rotate(-180deg);
 }
-.leaflet-control-attribution, .leaflet-control{
-    display: none;
+.leaflet-control-attribution,
+.leaflet-control {
+  display: none;
 }
