@@ -32,7 +32,7 @@ interface Props {
     src: string;
     alt: string;
     typeObject: string;
-    formatImage?: 'jpeg';
+    formatImage: string;
     blurRadius?: number;
 }
 

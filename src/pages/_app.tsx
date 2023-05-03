@@ -13,6 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta name="description" content="Foisoare | Foisoare la comanda" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="theme-color" content="#317EFB"/>
         <link rel="icon" href="/foisoare.ico" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/new.png" />
