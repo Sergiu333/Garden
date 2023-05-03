@@ -112,9 +112,16 @@ const Filter = ({produses, max}) => {
             >
               <div className="flex flex-col bg-[#2C2B2B] w-fit rounded-[8px] overflow-hidden">
                 <div className="relative w-[380px] lg:w-[577px] h-[300px] lg:h-[450px]">
-                  <ImageBlur
-                      src={`${filteredProducts.map((link: any) => link.attributes.poster.data.attributes.url,)[index]}`}
-                      alt="this image is from filter" typeObject="cover" formatImage="jpg"/>
+                  <Image
+                      src={`${
+                          filteredProducts.map(
+                              (link: any) => link.attributes.poster.data.attributes.url,
+                          )[index]
+                      }`}
+                      fill={true}
+                      style={{ objectFit: 'cover' }}
+                      alt="this image is from filter"
+                  />
                 </div>
                 <div className="p-[16px]">
                   <div className="flex flex-col gap-[16px]">

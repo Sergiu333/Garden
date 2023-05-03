@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 import Image from 'next/image';
-import { createCanvas, loadImage, CanvasRenderingContext2D } from 'canvas';
+import {createCanvas, loadImage, CanvasRenderingContext2D} from 'canvas';
 import {DEFAULT_BLUR_URL} from "../../../utils/constants";
 
 async function convertImageToBase64(imageUrl: string): Promise<string> {
@@ -17,7 +17,7 @@ async function fetchBlurDataUrl(base64: string, blurRadius: number, formatImage:
 
     const img = await loadImage(`data:image/${formatImage};base64,${base64}`);
 
-    const { naturalWidth: width, naturalHeight: height } = img;
+    const {naturalWidth: width, naturalHeight: height} = img;
     canvas.width = width;
     canvas.height = height;
     const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
@@ -36,7 +36,7 @@ interface Props {
     blurRadius?: number;
 }
 
-const Blur = ({ src, alt, typeObject, formatImage, blurRadius = 10 }: Props): JSX.Element => {
+const Blur = ({src, alt, typeObject, formatImage, blurRadius = 10}: Props): JSX.Element => {
     const [imageLoaded, setImageLoaded] = useState<boolean>(false);
     const [imageBase64, setImageBase64] = useState<string>();
     const [blurDataUrl, setBlurDataUrl] = useState<string>();
@@ -61,19 +61,15 @@ const Blur = ({ src, alt, typeObject, formatImage, blurRadius = 10 }: Props): JS
     }, [imageLoaded, imageBase64, blurRadius]);
     return (
         <>
-            <Image src={src} alt={alt} fill objectFit={`${typeObject}`} />
             {blurDataUrl && (
-                <div>
-                    <Image
-                        src={blurDataUrl}
-                        alt={alt}
-                        fill
-                        objectFit={`${typeObject}`}
-                        placeholder="blur"
-                        blurDataURL={blurDataUrl}
-                    />
-                    <Image src={src} alt={alt} fill objectFit={`${typeObject}`} />
-                </div>
+                <Image
+                    src={src}
+                    alt={alt}
+                    fill
+                    style={{objectFit: 'cover',}}
+                    placeholder="blur"
+                    blurDataURL={blurDataUrl}
+                />
             )}
         </>
     );

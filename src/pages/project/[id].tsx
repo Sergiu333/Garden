@@ -20,7 +20,7 @@ const Modal = ({ imageUrl, onClose, children, subtitle }) => {
         {subtitle}
       </div>
       <button
-        className="bg-white text-black p-2 w-[35px] h-[35px] absolute right-[5%] md:right-[25%] top-[20%] md:top-[5%] z-[9999] flex justify-center items-center opacity-30 border border-red-400"
+        className="bg-black text-white font-bold opacity-80 p-2 w-[35px] h-[35px] absolute right-[5%] md:right-[25%] top-[20%] md:top-[5%] z-[9999] flex justify-center items-center opaci ty-30 border"
         onClick={onClose}
       >
         X
@@ -30,11 +30,20 @@ const Modal = ({ imageUrl, onClose, children, subtitle }) => {
         onClick={(event) => event.stopPropagation()}
       >
         <div className="hidden lg:block">
-          <ImageBlur src={imageUrl} alt='image url' typeObject='cover' formatImage='jpeg'/>
-
+          <Image
+              src={imageUrl}
+              alt="image url"
+              layout="fill"
+              objectFit="cover"
+          />
         </div>
         <div className="block lg:hidden">
-          <ImageBlur src={imageUrl} alt='image url' typeObject='contain' formatImage='jpeg'/>
+          <Image
+              src={imageUrl}
+              alt="image url"
+              layout="fill"
+              objectFit="contain"
+          />
         </div>
         {children}
       </div>
@@ -197,7 +206,12 @@ export default function ProductPage({ product }: ProductPageProps) {
                 className="relative w-[99%] md:h-[99%] w-full h-full rounded-2xl bg-center bg-cover duration-500 overflow-hidden"
                 onClick={() => handleCardClick(currentIndex)}
               >
-                <ImageBlur src={`${product.attributes.multi.data[currentIndex].attributes.url}`} alt='images' typeObject='cover' formatImage='jpeg'/>
+                <Image
+                    src={`${product.attributes.multi.data[currentIndex].attributes.url}`}
+                    alt="images"
+                    fill={true}
+                    style={{ objectFit: 'cover' }}
+                />
               </div>
               <div className="block lg:hidden lg:group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
                 <BsChevronCompactLeft onClick={prevSlide} size={30} />

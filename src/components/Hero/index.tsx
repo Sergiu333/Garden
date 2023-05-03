@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import i18n from '../../../i18n';
 import {DEFAULT_BLUR_URL} from "../../../utils/constants";
+import ImageBlur from "@/components/ImageBlur";
 i18n.t('translation.key');
 
 const Hero = () => {
@@ -27,6 +28,7 @@ const Hero = () => {
             placeholder="blur"
             blurDataURL={`${DEFAULT_BLUR_URL}`}
           />
+          {/*<ImageBlur src='/bg-hero.webp' alt='bg image banner from hero' typeObject="cover" formatImage='webp'/>*/}
       </div>
       <div className="z-40 w-full h-[50px] lg:h-[104px] -mt-[50px] lg:-mt-[104px] hero-gradient-2" />
     </div>
