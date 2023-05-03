@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import i18n from '../../../i18n';
 import { useRouter } from 'next/router';
 import convertImageToBase64 from '../../../utils/hooks/convertImageToBase64';
+import ImageBlur from "@/components/ImageBlur";
 
 i18n.t('translation.key');
 
@@ -40,10 +41,7 @@ const Filter = ({produses, max}) => {
   }, []);
 
   const filteredProducts = produses.data.filter((product: any) => {
-    console.log('Product:', product);
-    console.log('Current category:', currentCategory);
     const isMatch = currentCategory === 'all' || product.attributes.category === currentCategory;
-    console.log('Is match:', isMatch);
     return isMatch;
     setCurrentIndex(null);
   });
@@ -114,18 +112,9 @@ const Filter = ({produses, max}) => {
             >
               <div className="flex flex-col bg-[#2C2B2B] w-fit rounded-[8px] overflow-hidden">
                 <div className="relative w-[380px] lg:w-[577px] h-[300px] lg:h-[450px]">
-                  <Image
-                    src={`${
-                      filteredProducts.map(
-                        (link: any) => link.attributes.poster.data.attributes.url,
-                      )[index]
-                    }`}
-                    fill={true}
-                    style={{ objectFit: 'cover' }}
-                    alt="this image is from filter"
-                    // priority={true}
-                    // quality={100}
-                  />
+                  <ImageBlur
+                      src={`${filteredProducts.map((link: any) => link.attributes.poster.data.attributes.url,)[index]}`}
+                      alt="this image is from filter" typeObject="cover" formatImage="jpg"/>
                 </div>
                 <div className="p-[16px]">
                   <div className="flex flex-col gap-[16px]">

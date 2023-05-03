@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RxDotFilled } from 'react-icons/rx';
 import Footer from '@/components/Footer';
+import ImageBlur from "@/components/ImageBlur";
 
 // @ts-ignore
 const Modal = ({ imageUrl, onClose, children, subtitle }) => {
@@ -29,24 +30,11 @@ const Modal = ({ imageUrl, onClose, children, subtitle }) => {
         onClick={(event) => event.stopPropagation()}
       >
         <div className="hidden lg:block">
-          <Image
-            src={imageUrl}
-            alt="image url"
-            layout="fill"
-            objectFit="cover"
-            priority={true}
-            quality={100}
-          />
+          <ImageBlur src={imageUrl} alt='image url' typeObject='cover' formatImage='jpeg'/>
+
         </div>
         <div className="block lg:hidden">
-          <Image
-            src={imageUrl}
-            alt="image url"
-            layout="fill"
-            objectFit="contain"
-            priority={true}
-            quality={100}
-          />
+          <ImageBlur src={imageUrl} alt='image url' typeObject='contain' formatImage='jpeg'/>
         </div>
         {children}
       </div>
@@ -150,8 +138,6 @@ export default function ProductPage({ product }: ProductPageProps) {
     }
 
     setPrice(newPrice);
-    console.log(newPrice);
-
     event.target.defaultValue = length;
   }
 
@@ -168,7 +154,6 @@ export default function ProductPage({ product }: ProductPageProps) {
     }
 
     setPrice(newPrice);
-    console.log(newPrice);
 
     event.target.defaultValue = width;
   }
@@ -212,14 +197,7 @@ export default function ProductPage({ product }: ProductPageProps) {
                 className="relative w-[99%] md:h-[99%] w-full h-full rounded-2xl bg-center bg-cover duration-500 overflow-hidden"
                 onClick={() => handleCardClick(currentIndex)}
               >
-                <Image
-                  src={`${product.attributes.multi.data[currentIndex].attributes.url}`}
-                  alt="images"
-                  fill={true}
-                  style={{ objectFit: 'cover' }}
-                  priority={true}
-                  quality={100}
-                />
+                <ImageBlur src={`${product.attributes.multi.data[currentIndex].attributes.url}`} alt='images' typeObject='cover' formatImage='jpeg'/>
               </div>
               <div className="block lg:hidden lg:group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
                 <BsChevronCompactLeft onClick={prevSlide} size={30} />

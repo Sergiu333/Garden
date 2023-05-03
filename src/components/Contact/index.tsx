@@ -32,7 +32,6 @@ const Contact: FC<ContactUsProps> = (props) => {
       body: JSON.stringify(data),
     });
     resetForm();
-    console.log(data);
   };
 
   return (

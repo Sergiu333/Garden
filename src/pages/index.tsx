@@ -8,7 +8,7 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import dynamic from 'next/dynamic';
 import { fetcher } from '@/pages/api/api';
-
+import ImageBlur from "@/components/ImageBlur";
 // @ts-ignore
 const Home: NextPage = ({ produses }) => {
   const Neighborhood = dynamic(() => import('../components/Neighborhood'), {
