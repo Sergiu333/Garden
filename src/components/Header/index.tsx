@@ -55,7 +55,6 @@ const Header = () => {
       .catch((error) => console.error('Error converting image to base64:', error));
   }, []);
 
-  console.log(imageBase64, '00000000000000000000');
   return (
     <header
       className={`fixed top-0 left-0 z-[999] w-full transition-colors delay-100 ${

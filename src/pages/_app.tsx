@@ -6,10 +6,10 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>RapidMobil | Mobila la comanda</title>
+        <title>Foișoare.md | Mobila la comanda</title>
         <meta
           name="keywords"
-          content="Fosiare la comanda, leagane la comanda , leagane moldova , lucrari din lemn"
+          content="Foișoare la comanda, leagane la comanda , leagane moldova , lucrari din lemn"
         />
         <meta name="description" content="Foisoare | Foisoare la comanda" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
