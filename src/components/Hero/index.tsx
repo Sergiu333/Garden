@@ -13,9 +13,9 @@ const Hero = () => {
       <div className="absolute top-[50%] z-10 left-[20px] mg:left-auto sm:px-[100px] md:px-[150px]">
         <div className="flex flex-col font-bold text-[20px] md:text-[50px] lg:text-[64px] leading-[139%] tracking-[0.03em] whitespace-nowrap">
           <div className="text-[#FFFBFB]">
-            {t('hero-title-1')} <span className="text-[#FF9505]">{t('hero-title-2')}</span>
+              Creazați gradina <span className="text-[#FF9505]">{t('hero-title-2')}</span>
           </div>
-          <div className="text-[#FFFBFB]">{t('hero-title-3')}</div>
+          <div className="text-[#FFFBFB]">Impreuna cu noi</div>
         </div>
       </div>
       <div className="relative w-full h-[300px] md:h-[776px] 2xl:h-[900px]">

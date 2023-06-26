@@ -20,7 +20,7 @@ const Modal = ({ imageUrl, onClose, children, subtitle }) => {
         {subtitle}
       </div>
       <button
-        className="bg-white text-black p-2 w-[35px] h-[35px] absolute right-[5%] md:right-[25%] top-[20%] md:top-[5%] z-[9999] flex justify-center items-center opacity-30 border border-red-400"
+        className="bg-white text-black p-2 w-[35px] h-[35px] absolute right-[5%] md:right-[25%] top-[20%] md:top-[5%] z-[9999] flex justify-center items-center opacity-80 border border-red-400"
         onClick={onClose}
       >
         X
@@ -30,11 +30,11 @@ const Modal = ({ imageUrl, onClose, children, subtitle }) => {
         onClick={(event) => event.stopPropagation()}
       >
         <div className="hidden lg:block">
-          <ImageBlur src={imageUrl} alt='image url' typeObject='cover' formatImage='jpeg'/>
+          <Image src={imageUrl} alt='image url' fill={true} style={{ objectFit: 'cover' }} quality={100} priority={true} />
 
         </div>
         <div className="block lg:hidden">
-          <ImageBlur src={imageUrl} alt='image url' typeObject='contain' formatImage='jpeg'/>
+          <Image src={imageUrl} alt='image url' fill={true} style={{ objectFit: 'contain' }} quality={100} priority={true} />
         </div>
         {children}
       </div>
@@ -197,7 +197,7 @@ export default function ProductPage({ product }: ProductPageProps) {
                 className="relative w-[99%] md:h-[99%] w-full h-full rounded-2xl bg-center bg-cover duration-500 overflow-hidden"
                 onClick={() => handleCardClick(currentIndex)}
               >
-                <ImageBlur src={`${product.attributes.multi.data[currentIndex].attributes.url}`} alt='images' typeObject='cover' formatImage='jpeg'/>
+                <Image src={`https://imagetest-yrgq.onrender.com${product.attributes.multi.data[currentIndex].attributes.url}`} fill={true} style={{ objectFit: 'cover' }} alt="image" quality={100} priority={true}/>
               </div>
               <div className="block lg:hidden lg:group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
                 <BsChevronCompactLeft onClick={prevSlide} size={30} />
@@ -224,7 +224,8 @@ export default function ProductPage({ product }: ProductPageProps) {
             <div className="flex flex-col gap-6 text-[24px] lg:text-[26px] select-none">
               <div className="flex flex-row gap-4">
                 <span className="text-[#FF9505] font-bold">Pretul: </span>
-                {item.price ? <div>{price}$</div> : <div className="text-gray-500">Negociabil</div>}
+                Negociabil
+                {/*{item.price ? <div>{price} Lei</div> : <div className="text-gray-500">Negociabil</div>}*/}
               </div>
               <div className="flex flex-row gap-4">
                 <div className="text-[#FF9505] font-bold">Tip lemn:</div>
@@ -331,7 +332,7 @@ export default function ProductPage({ product }: ProductPageProps) {
           isModalOpen && (
             // @ts-ignore
             <Modal
-              imageUrl={`${product.attributes.multi.data[currentIndex].attributes.url}`}
+              imageUrl={`https://imagetest-yrgq.onrender.com${product.attributes.multi.data[currentIndex].attributes.url}`}
               subtitle={item.category}
               onClose={CloseModal}
                 // @ts-ignore
