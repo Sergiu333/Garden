@@ -1,13 +1,14 @@
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+
 import useWindowWidth from '../../../utils/hooks/use-window-width';
 import Hamburger from '../../../public/Hamburger';
-import { useEffect, useState } from 'react';
 import useScrollY from '../../../utils/hooks/use-scroll-y';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import i18n from '../../../i18n';
-import convertImageToBase64 from '../../../utils/hooks/convertImageToBase64';
+import ImageBlur from "@/components/ImageBlur";
 i18n.t('translation.key');
 
 const Header = () => {
@@ -32,28 +33,6 @@ const Header = () => {
       );
     });
   };
-
-  const [imageBase64, setImageBase64] = useState<string | null>(null);
-  const [foisoare, setFoisoare] = useState<string | null>(null);
-  const [font, setFont] = useState<string | null>(null);
-
-  useEffect(() => {
-    const imageUrl = '/hero-image.jpg'; // URL-ul imaginii
-    const foisoare = '/foisoare.svg'; // URL-ul imaginii
-    const font = '/font.svg'; // URL-ul imaginii
-
-    convertImageToBase64(imageUrl)
-      .then((base64) => setImageBase64(base64))
-      .catch((error) => console.error('Error converting image to base64:', error));
-
-    convertImageToBase64(foisoare)
-      .then((base64) => setFoisoare(base64))
-      .catch((error) => console.error('Error converting image to base64:', error));
-
-    convertImageToBase64(font)
-      .then((base64) => setFont(base64))
-      .catch((error) => console.error('Error converting image to base64:', error));
-  }, []);
 
   return (
     <header
@@ -99,17 +78,14 @@ const Header = () => {
             >
               {mapHeaderLinks()}
               <Link href="#contact">
-                <div className="text-[#1B1B1B] bg-[#FFFBFB] rounded-[8px] px-[24px] py-[12px] border font-semibold">
+                <div className="text-[#1B1B1B] bg-[#FFFBFB] rounded-[8px] px-[24px] py-[12px] border font-semibold" onClick={toggleHamburger}>
                   {t('footer.0.contact')}
                 </div>
               </Link>
             </div>
           </div>
         </div>
-        <div
-          className={`w-full flex justify-end lg:hidden py-6 z-[9999]`}
-          onClick={toggleHamburger}
-        >
+        <div className={`w-full flex justify-end lg:hidden py-6 z-[9999]`} onClick={toggleHamburger}>
           <Hamburger isOpen={hamburgerOpen} />
         </div>
       </div>
