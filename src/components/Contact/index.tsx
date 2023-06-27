@@ -45,11 +45,11 @@ const Contact: FC<ContactUsProps> = (props) => {
       <div className="px-[20px] sm:px-[100px] md:px-[150px] py-[100px] md:py-[224px] flex flex-col lg:flex-row justify-between">
         <div className="flex flex-col gap-[16px] z-10 ">
           <div className="font-bold text-[30px] md:text-[40px] lg:text-[64px] leading-[139%]">
-            <div className="text-w">Did You Find Your</div>
-            <div className="text-o">Dream Home?</div>
+            <div className="text-w">Un foișor pentru</div>
+            <div className="text-o">grădina ta?</div>
           </div>
           <div className="text-[25px] md:text-[28px] lg:text-[32px] leading-[111%] text-w/[65%] max-w-[610px]">
-            Thank you for getting in touch! if you find your dream home connect with us
+            Foișoare de calitate superioară, aducând magia în grădina ta.
           </div>
         </div>
         <Formik
@@ -68,7 +68,7 @@ const Contact: FC<ContactUsProps> = (props) => {
                         className={`w-full bg-transparent outline-0 border-b focus:border-b-grey-1 ${
                           errors.name && touched.name ? 'border-b-red-600' : 'border-b-grey-1'
                         } text-[20px] md:text-[25px] leading-6 md:leading-[25px] cursor-scale small py-1.5 text-w`}
-                        placeholder="Your Name"
+                        placeholder="Nume"
                         name="name"
                       />
                       {errors.name && touched.name ? (
@@ -81,7 +81,7 @@ const Contact: FC<ContactUsProps> = (props) => {
                         className={`w-full bg-transparent outline-0 border-b focus:border-b-grey-1 ${
                           errors.email && touched.email ? 'border-b-red-600' : 'border-b-grey-1'
                         } text-[20px] md:text-[25px] leading-6 md:leading-[25px] cursor-scale small py-1.5 text-w`}
-                        placeholder="Your Email"
+                        placeholder="Email"
                         name="email"
                       />
                       {errors.email && touched.email ? (
@@ -96,7 +96,7 @@ const Contact: FC<ContactUsProps> = (props) => {
                         className={`w-full bg-transparent outline-0 border-b focus:border-b-grey-1 ${
                           errors.phone && touched.phone ? 'border-b-red-600' : 'border-b-grey-1'
                         } text-[20px] md:text-[25px] leading-6 md:leading-[25px] cursor-scale small py-1.5 text-w`}
-                        placeholder="Phone Number"
+                        placeholder="Telefon"
                         name="phone"
                       />
                       {errors.phone && touched.phone ? (
@@ -109,7 +109,7 @@ const Contact: FC<ContactUsProps> = (props) => {
                         className={`w-full bg-transparent outline-0 border-b focus:border-b-grey-1 ${
                           errors.interes && touched.interes ? 'border-b-red-600' : 'border-b-grey-1'
                         } text-[20px] md:text-[25px] leading-6 md:leading-[25px] cursor-scale small py-1.5 text-w`}
-                        placeholder="Interested in"
+                        placeholder="Sunt interesat in.."
                         name="interes"
                       />
                       {errors.interes && touched.interes ? (
@@ -124,7 +124,7 @@ const Contact: FC<ContactUsProps> = (props) => {
                     className={`w-full bg-transparent outline-0 border-b focus:border-b-grey-1 ${
                       errors.message && touched.message ? 'border-b-red-600' : 'border-b-grey-1'
                     } text-[20px] md:text-[25px] leading-6 md:leading-[25px] cursor-scale small py-1.5 text-w`}
-                    placeholder="Message"
+                    placeholder="Mesaj / Propunere"
                     name="message"
                   />
                   {errors.message && touched.message ? (
@@ -135,7 +135,7 @@ const Contact: FC<ContactUsProps> = (props) => {
                   type="submit"
                   className="text-[#1B1B1B] bg-[#FFFBFB] rounded-[8px] px-[24px] py-[12px] border font-semibold lg:w-fit"
                 >
-                  Submit
+                  Trimite
                 </button>
               </div>
             </Form>

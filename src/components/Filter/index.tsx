@@ -118,7 +118,7 @@ const Filter = ({produses, max}) => {
                   {/*    alt="this image is from filter" typeObject="cover" formatImage="jpg"/>*/}
 
                   <Image
-                      src={`https://imagetest-yrgq.onrender.com${filteredProducts.map((link:any)=>link.attributes.poster.data.attributes.url,)[index]}`}
+                      src={`${filteredProducts.map((link:any)=>link.attributes.poster.data.attributes.url,)[index]}`}
                       fill={true}
                       style={{ objectFit: 'cover' }}
                       alt="this image is from filter"
@@ -131,7 +131,7 @@ const Filter = ({produses, max}) => {
                   <div className="flex flex-col gap-[16px]">
                     <div className="flex flex-row justify-between">
                       <div className="text-[#FFFBFB] font-semibold text-[24px] leading-[139%]">
-                        Negociabil
+                        {product.attributes.name}
                         {/*{product.attributes.price} Lei*/}
                       </div>
                       <button className="py-[11px] px-[24px] bg-[#FFFBFB] rounded-[8px] text-[#1B1B1B] font-semibold text-[14px] leading-[139%]">

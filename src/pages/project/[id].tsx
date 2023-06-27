@@ -197,7 +197,7 @@ export default function ProductPage({ product }: ProductPageProps) {
                 className="relative w-[99%] md:h-[99%] w-full h-full rounded-2xl bg-center bg-cover duration-500 overflow-hidden"
                 onClick={() => handleCardClick(currentIndex)}
               >
-                <Image src={`https://imagetest-yrgq.onrender.com${product.attributes.multi.data[currentIndex].attributes.url}`} fill={true} style={{ objectFit: 'cover' }} alt="image" quality={100} priority={true}/>
+                <Image src={`${product.attributes.multi.data[currentIndex].attributes.url}`} fill={true} style={{ objectFit: 'cover' }} alt="image" quality={100} priority={true}/>
               </div>
               <div className="block lg:hidden lg:group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
                 <BsChevronCompactLeft onClick={prevSlide} size={30} />
@@ -251,9 +251,10 @@ export default function ProductPage({ product }: ProductPageProps) {
                   <div className="text-gray-500">Indisponibil</div>
                 )}
               </div>
+              {item.acoperis[0] ? (
               <div className="flex flex-row gap-4">
                 <div className="text-[#FF9505] font-bold">Tip acoperis:</div>
-                {item.acoperis[0] ? (
+
                   <select
                     id="acoperis"
                     onChange={(event) => roofChange(event, price)}
@@ -271,10 +272,8 @@ export default function ProductPage({ product }: ProductPageProps) {
                         item.acoperis[1]?.acoperis}
                     </option>
                   </select>
-                ) : (
-                  <div className="text-gray-500">Indisponibil</div>
-                )}
               </div>
+                  ): null}
               <div className="flex flex-row gap-2.5">
                 <div className="text-[#FF9505] font-bold">Dimensiunea:</div>
                 {item.lungimea ? (
@@ -332,8 +331,8 @@ export default function ProductPage({ product }: ProductPageProps) {
           isModalOpen && (
             // @ts-ignore
             <Modal
-              imageUrl={`https://imagetest-yrgq.onrender.com${product.attributes.multi.data[currentIndex].attributes.url}`}
-              subtitle={item.category}
+              imageUrl={`${product.attributes.multi.data[currentIndex].attributes.url}`}
+              subtitle={item.name}
               onClose={CloseModal}
                 // @ts-ignore
               currentIndex={currentIndex}
