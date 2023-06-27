@@ -55,7 +55,8 @@ const Filter = ({produses, max}) => {
       .then((base64) => setImageBase64(base64))
       .catch((error) => console.error('Error converting image to base64:', error));
   }, []);
-
+// console.log(filteredProducts[0].attributes.poster.data.attributes.url)
+// console.log(`https://imagetest-yrgq.onrender.com${produses.data[0].attributes.poster.data.attributes.url}`)
   return (
     <div>
       <div className="px-[20px] sm:px-[100px] md:px-[150px] flex flex-col relative mt-[50px] 2xl:mt-[70px]">
@@ -112,22 +113,26 @@ const Filter = ({produses, max}) => {
             >
               <div className="flex flex-col bg-[#2C2B2B] w-fit rounded-[8px] overflow-hidden">
                 <div className="relative w-[380px] lg:w-[577px] h-[300px] lg:h-[450px]">
+                  {/*<ImageBlur*/}
+                  {/*    src={`https://imagetest-yrgq.onrender.com${produses.data[0].attributes.poster.data.attributes.url}`}*/}
+                  {/*    alt="this image is from filter" typeObject="cover" formatImage="jpg"/>*/}
+
                   <Image
-                      src={`${
-                          filteredProducts.map(
-                              (link: any) => link.attributes.poster.data.attributes.url,
-                          )[index]
-                      }`}
+                      src={`${filteredProducts.map((link:any)=>link.attributes.poster.data.attributes.url,)[index]}`}
                       fill={true}
                       style={{ objectFit: 'cover' }}
                       alt="this image is from filter"
+                      quality={100}
+                      priority={true}
                   />
+
                 </div>
                 <div className="p-[16px]">
                   <div className="flex flex-col gap-[16px]">
                     <div className="flex flex-row justify-between">
                       <div className="text-[#FFFBFB] font-semibold text-[24px] leading-[139%]">
-                        {product.attributes.price}$
+                        {product.attributes.name}
+                        {/*{product.attributes.price} Lei*/}
                       </div>
                       <button className="py-[11px] px-[24px] bg-[#FFFBFB] rounded-[8px] text-[#1B1B1B] font-semibold text-[14px] leading-[139%]">
                         Detalii

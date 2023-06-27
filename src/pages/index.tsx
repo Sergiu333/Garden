@@ -18,7 +18,7 @@ const Home: NextPage = ({ produses }) => {
     <div>
       <Header />
       <Hero />
-      <Filter produses={produses} max={6} />
+      <Filter produses={produses} max={10} />
       <Neighborhood />
       <AboutUs />
       <Contact />

@@ -17,10 +17,10 @@ const Neighborhood = () => {
     <div className="px-[20px] xs:px-[50px] md:px-[80px] lg:px-[150px] flex flex-col gap-[32px] pb-10 h-[50vh] md:h-[70vh]">
       <div className="flex flex-col">
         <div className="text-[32px] font-semibold leading-[139%] text-[#FF9505]">
-          {t('neighborhood')}
+          Adresa noastră
         </div>
         <div className="text-[16px] leading-[158%] text-white/[50%]">
-          Deam home villas San Diego, CA, USA
+          r. Soldanești st. Cobilea
         </div>
       </div>
       <MapContainer center={[geoData.lat, geoData.lng]} zoom={14} className="h-full">

@@ -12,7 +12,7 @@ async function convertImageToBase64(imageUrl: string): Promise<string> {
     return base64;
 }
 
-async function fetchBlurDataUrl(base64: string, blurRadius: number, formatImage: string): Promise<string> {
+async function fetchBlurDataUrl(base64: string, blurRadius: number, formatImage: string | undefined): Promise<string> {
     const canvas = createCanvas(0, 0);
 
     const img = await loadImage(`data:image/${formatImage};base64,${base64}`);
