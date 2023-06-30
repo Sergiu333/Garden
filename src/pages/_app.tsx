@@ -6,12 +6,12 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Foișoare.md | Mobila la comanda</title>
+        <title>FoișorulMeu.md | Mobila la comanda</title>
         <meta
           name="keywords"
           content="Foișoare la comanda, leagane la comanda , leagane moldova , lucrari din lemn"
         />
-        <meta name="description" content="Foisoare | Foisoare la comanda" />
+        <meta name="description" content="FoișorulMeu | Foisoare la comanda" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content="#317EFB"/>
         <link rel="icon" href="/foisoare.ico" />

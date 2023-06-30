@@ -118,7 +118,7 @@ const Footer = () => {
       </div>
       <div className="h-[1px] w-full bg-w/[35%]" />
       <div className="flex justify-center items-center text-w/[35%] py-[32px]">
-        © {currentYear} Foisoare.md | {t('footer.0.rights')}
+        © {currentYear} FoișorulMeu.md | {t('footer.0.rights')}
       </div>
     </footer>
   );

@@ -4,8 +4,8 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "Foisoare",
-  "short_name": "Foisoare",
+  "name": "FoisorulMeu",
+  "short_name": "FoisorulMeu",
   "description": "Foisoare la comanda",
   "icons": [
     {
