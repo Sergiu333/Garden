@@ -13,5 +13,4 @@ const Blur = () => {
       />
   )
 }
-
 export default Blur;
