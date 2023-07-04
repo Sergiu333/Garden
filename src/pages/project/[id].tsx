@@ -310,7 +310,7 @@ export default function ProductPage({ product }: ProductPageProps) {
                   ''
                 )}
               </div>
-              <Link href="tel://+37368069937">
+              <Link href="tel://+373 60 895 533">
                 <div className="text-center font-bold text-[24px] text-[#1B1B1B] bg-[#FFFBFB] rounded-[8px] px-[24px] py-[12px] border">
                   Comanda
                 </div>
