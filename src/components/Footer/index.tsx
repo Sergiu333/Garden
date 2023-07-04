@@ -20,16 +20,28 @@ const Footer = () => {
   return (
     <footer id="contact">
       <div className="px-[20px] xs:px-[50px] md:px-[80px] lg:px-[150px] flex flex-col lg:flex-row justify-between py-[64px] gap-10 lg:gap-0">
-        <div className="flex flex-col gap-[18px] justify-center">
+        <div className="flex flex-col justify-center">
           <div className="relative">
             <div className="w-[100px] h-[100px] 2xl:w-[200px] 2xl:h-[200px]">
               <Image
-                src="/logo_white.png"
-                alt="image news"
-                layout="fill"
-                objectFit="contain"
-                quality={100}
-                priority={true}
+                  src="/foisoare.svg"
+                  alt="image news"
+                  layout="fill"
+                  objectFit="contain"
+                  quality={100}
+                  priority={true}
+              />
+            </div>
+          </div>
+          <div className="relative mt-2.5 overflow-hidden">
+            <div className="w-[50px] h-[36px] 2xl:w-[100px] 2xl:h-[76px]">
+              <Image
+                  src="/font.svg"
+                  alt="image news"
+                  layout="fill"
+                  objectFit="contain"
+                  quality={100}
+                  priority={true}
               />
             </div>
           </div>
@@ -51,13 +63,17 @@ const Footer = () => {
               <div className="relative w-[20px] h-[20px]">
                 <Image src="/phone.svg" alt="phone call" fill style={{ objectFit: 'contain' }} />
               </div>
-              <div>+373 60 895 533</div>
+              <Link href="tel://+373 60 895 533">
+                <div>+373 60 895 533</div>
+              </Link>
             </div>
             <div className="flex flex-row gap-[8px] items-center">
               <div className="relative w-[20px] h-[20px]">
                 <Image src="/mail.svg" alt="phone call" fill style={{ objectFit: 'contain' }} />
               </div>
-              <div>anghelenicis59@gmail.com</div>
+              <Link href="mailto:anghelenicis59@gmail.com">
+                <div>anghelenicis59@gmail.com</div>
+              </Link>
             </div>
           </div>
         </div>
