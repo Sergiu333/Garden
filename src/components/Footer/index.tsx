@@ -46,7 +46,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="text-[16px] leading-[158%] text-w/[80%] lg:w-[300px]">
-            Cu pasiune și măiestrie, realizăm foisoare personalizate, transformând grădinile în oaze de relaxare și frumusețe.
+            Cu pasiune și măiestrie, realizăm foișoare la comanda personalizate, transformând grădinile în oaze de relaxare și frumusețe.
           </div>
         </div>
         <div className="flex flex-col gap-[18px] text-w/[80%]">
