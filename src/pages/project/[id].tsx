@@ -30,11 +30,11 @@ const Modal = ({ imageUrl, onClose, children, subtitle }) => {
         onClick={(event) => event.stopPropagation()}
       >
         <div className="hidden lg:block">
-          <Image src={imageUrl} alt='image url' fill={true} style={{ objectFit: 'cover' }} quality={100} priority={true} />
+          <Image src={imageUrl} alt='image url' fill={true} style={{ objectFit: 'cover' }}  />
 
         </div>
         <div className="block lg:hidden">
-          <Image src={imageUrl} alt='image url' fill={true} style={{ objectFit: 'contain' }} quality={100} priority={true} />
+          <Image src={imageUrl} alt='image url' fill={true} style={{ objectFit: 'contain' }}  />
         </div>
         {children}
       </div>
@@ -197,7 +197,7 @@ export default function ProductPage({ product }: ProductPageProps) {
                 className="relative w-[99%] md:h-[99%] w-full h-full rounded-2xl bg-center bg-cover duration-500 overflow-hidden"
                 onClick={() => handleCardClick(currentIndex)}
               >
-                <Image src={`${product.attributes.multi.data[currentIndex].attributes.url}`} fill={true} style={{ objectFit: 'cover' }} alt="image" quality={100} priority={true}/>
+                <Image src={`${product.attributes.multi.data[currentIndex].attributes.url}`} fill={true} style={{ objectFit: 'cover' }} alt="image" />
               </div>
               <div className="block lg:hidden lg:group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
                 <BsChevronCompactLeft onClick={prevSlide} size={30} />
